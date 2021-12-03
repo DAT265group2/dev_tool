@@ -37,39 +37,40 @@ def analyze_code(code):
     
     
     #printing results
-    print("======================================================================")
-    print("[Overall Code Analysis]")
-    print(analysis)
-    print("Halsted Volume: " + str(hal_vol)) 
-    print("Code Cyclomatic Complexity: " + str(cc))
-    print("Code Cyclomatic Complexity Grade: " + cc_rank)
-    print("Logical lines of code: " + str(lloc))
-    print("Percentage of lines " + "of comment: " + 
-          str(round(comment_percentage,2)) + "%.")
-    print("======================================================================")
-    print("[Cyclomatic Complexity Analysis]")
-    print(cc_results)
-    print("======================================================================")
-    print("[Maintainability Analysis]")
-    print("Maintainability Index Score: " + str(round(mi_score,2)))
-    print("Maintainability Index Grade: " + mi_rank)
-    print("======================================================================")
-    print("[Analysis Result]")
-    print("Overall level of Maintainability: " + mi_rank_dict.get(mi_rank))
-    print("Overall level of Cyclomatic Complexity: " + cc_rank_dict.get(cc_rank))
+    print(
+        "======================================================================\n"
+        "[Overall Code Analysis]\n"
+        f"{analysis}\n"
+        f"Halsted Volume: {str(hal_vol)}\n"
+        f"Code Cyclomatic Complexity: {str(cc)}\n"
+        f"Code Cyclomatic Complexity Grade: {cc_rank}\n"
+        f"Logical lines of code: {str(lloc)}\n"
+        f"Percentage of lines of comment: {str(round(comment_percentage, 2))}%.\n"
+        "======================================================================\n"
+        "[Cyclomatic Complexity Analysis]\n"
+        f"{cc_results}\n"
+        "======================================================================\n"
+        "[Maintainability Analysis]\n"
+        f"Maintainability Index Score: {str(round(mi_score,2))}\n"
+        f"Maintainability Index Grade: {mi_rank}\n"
+        "======================================================================\n"
+        "[Analysis Result]\n"
+        f"Overall level of Maintainability: {mi_rank_dict.get(mi_rank)}\n"
+        f"Overall level of Cyclomatic Complexity: {cc_rank_dict.get(cc_rank)}\n"
+    )
 
 
 def main():
-    print("Getting all python files in currect working directory: " + os.getcwd())
+    print(f"Getting all python files in currect working directory: {os.getcwd()}")
     pyFiles = glob.glob('*.py')
     for file in pyFiles:
         try:
             print()
-            print("Running analysis on file: " + file)
+            print(f"Running analysis on file: {file}")
             code = py2str(file)
             analyze_code(code)
         except:
-            raise RuntimeError("Something went wrong when analyzing: " + file)
+            raise RuntimeError(f"Something went wrong when analyzing: {file}")
 
 if __name__ == "__main__":
     main()
