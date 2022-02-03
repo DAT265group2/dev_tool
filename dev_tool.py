@@ -38,7 +38,7 @@ def analyze_code(code):
     
     #printing results
     print(
-        "======================================================================\n"
+        "======================================\n"
         "[Overall Code Analysis]\n"
         f"{analysis}\n"
         f"Halsted Volume: {str(hal_vol)}\n"
@@ -46,14 +46,14 @@ def analyze_code(code):
         f"Code Cyclomatic Complexity Grade: {cc_rank}\n"
         f"Logical lines of code: {str(lloc)}\n"
         f"Percentage of lines of comment: {str(round(comment_percentage, 2))}%.\n"
-        "======================================================================\n"
+        "======================================\n"
         "[Cyclomatic Complexity Analysis]\n"
         f"{cc_results}\n"
-        "======================================================================\n"
+        "======================================\n"
         "[Maintainability Analysis]\n"
         f"Maintainability Index Score: {str(round(mi_score,2))}\n"
         f"Maintainability Index Grade: {mi_rank}\n"
-        "======================================================================\n"
+        "======================================\n"
         "[Analysis Result]\n"
         f"Overall level of Maintainability: {mi_rank_dict.get(mi_rank)}\n"
         f"Overall level of Cyclomatic Complexity: {cc_rank_dict.get(cc_rank)}\n"
